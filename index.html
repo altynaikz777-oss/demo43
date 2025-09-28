@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        background-color: #fff;
+        width: 1000px;
+        height: 600px;
+      }
+      .box1 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        background-color: #000;
+      }
+      .box2 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: #fff;
+      }
+      .box2 img {
+        object-fit: cover;
+      }
+      .header {
+        color: #fff;
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 50px;
+        top: 100px;
+        left: 300px;
+        z-index: 1;
+      }
+      .header1 {
+        color: #000;
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 50px;
+        top: 100px;
+        left: 520px;
+        z-index: 0;
+      }
+      .location {
+        background-color: #000;
+        width: 150px;
+        height: 20px;
+        padding: 10px;
+        color: #fff;
+        border-right: 20px solid orange;
+        position: absolute;
+      }
+      .text {
+        position: absolute;
+        top: 150px;
+        left: 960px;
+      }
+      .gray {
+        color: gray;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+      }
+      .main {
+        display: grid;
+        grid-template-columns: repeat(5, 2fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 1200px;
+        height: 1350px;
+        background-color: #fff;
+        margin-top: 200px;
+        margin-left: 100px;
+        gap: 20px;
+      }
+      .boxx1 {
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background-color: white;
+      }
+      .boxx1 h3 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 30px;
+        margin-top: 100px;
+      }
+      .boxx1 p {
+        color: gray;
+        margin-top: -150px;
+      }
+      .boxx2 {
+        display: grid;
+        grid-row: 1/2;
+        grid-column: 3/6;
+        background-color: orange;
+      }
+      .boxx2 img {
+        object-fit: cover;
+        width: 725px;
+      }
+      .boxx3 {
+        display: grid;
+        grid-row: 2/4;
+        grid-column: 1/4;
+        background-color: yellow;
+      }
+      .boxx3 img {
+        object-fit: fill;
+        width: 719px;
+        height: 870px;
+      }
+      .boxx4 {
+        display: grid;
+        grid-column: 4/6;
+        grid-row: 2/3;
+        background-color: pink;
+      }
+      .boxx4 img {
+        width: 470px;
+        height: 438px;
+      }
+      .boxx5 {
+        display: flex;
+        grid-row: 3/4;
+        grid-column: 4/6;
+        background-color: #000;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .boxx5 h3 {
+        color: #fff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 35px;
+        margin-left: 50px;
+      }
+      .boxx5 p {
+        color: gray;
+        font-size: 15px;
+        margin-left: 50px;
+      }
+      .footer {
+        background-color: #000;
+        width: 100%;
+        height: 150px;
+        color: #fff;
+        margin-top: 100px;
+        position: relative;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        margin-left: -500px;
+        margin-top: 50px;
+        position: absolute;
+        top: -20px;
+        left: 660px;
+      }
+      .bottom h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      .bottom p {
+        color: gray;
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+      @media (max-width: 600px) {
+        .top {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          width: 100%;
+          height: auto;
+        }
+
+        .box1,
+        .box2 {
+          grid-column: 1/2;
+          grid-row: auto;
+        }
+
+        .box2 img {
+          width: 100%;
+          height: auto;
+        }
+
+        .header,
+        .header1 {
+          position: static;
+          text-align: center;
+          font-size: 30px;
+          margin: 20px 0;
+        }
+
+        .text {
+          position: static;
+          text-align: center;
+          margin: 20px;
+        }
+
+        .location {
+          margin: 20px auto;
+          display: block;
+          text-align: center;
+        }
+
+        .main {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          width: 100%;
+          height: auto;
+          margin: 50px auto;
+        }
+
+        .boxx2 img,
+        .boxx3 img,
+        .boxx4 img {
+          width: 100%;
+          height: auto;
+        }
+
+        .boxx5 {
+          padding: 20px;
+          text-align: center;
+        }
+
+        .footer {
+          height: auto;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .bottom {
+          flex-direction: column;
+          gap: 20px;
+          position: static;
+          margin: 0;
+        }
+      }
+      @media (min-width: 601px) and (max-width: 992px) {
+        .top {
+          width: 100%;
+          height: auto;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .header,
+        .header1 {
+          font-size: 40px;
+          top: 50px;
+          left: 100px;
+        }
+
+        .text {
+          top: auto;
+          left: auto;
+          margin: 20px;
+          position: static;
+        }
+
+        .main {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
+          width: 100%;
+          height: auto;
+          margin: 50px auto;
+        }
+
+        .boxx2 img,
+        .boxx3 img,
+        .boxx4 img {
+          width: 100%;
+          height: auto;
+        }
+
+        .boxx5 {
+          padding: 20px;
+          text-align: center;
+        }
+
+        .footer {
+          height: auto;
+          padding: 20px;
+        }
+
+        .bottom {
+          flex-direction: column;
+          gap: 20px;
+          position: static;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="box1"></div>
+        <div class="box2">
+          <img src="images/photo-1.png" alt="" />
+        </div>
+        <h1 class="header">MODERN <br />ART GAL</h1>
+        <h1 class="header1">N <br />LERY</h1>
+        <div class="text">
+          <p class="gray">
+            Lorem ipsum, dolor sit ameniti incidunt <br />
+            minima ut eveniet alias illo dolor aspern <br />
+            delectus nemo corrupti amet debitis enim. <br />
+            Maiores quos quia praesentium itaque harum.
+          </p>
+          <div>
+            <a
+              href="file:///Users/altynaj/Desktop/demo4/images/location.html"
+              class="location"
+              >OUR LOCATION</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="boxx1">
+          <h3>YOUR DAY AT <br />THE GALLERY</h3>
+          <p>
+            Lorems magnam eveniet? Accusamus repudiandae <br />
+            voluptatum animi laborum voluptates ad alias <br />
+            magni vitae sunt aspernatur, temporibus officiis <br />dolorem fuga
+            veniam earum possimus.
+          </p>
+        </div>
+        <div class="boxx2">
+          <img src="images/photo-2.png" alt="" />
+        </div>
+        <div class="boxx3">
+          <img src="images/photo-3.png" alt="" />
+        </div>
+        <div class="boxx4">
+          <img src="images/photo-4.png" alt="" />
+        </div>
+        <div class="boxx5">
+          <h3>
+            COME & BE <br />
+            INSPIRED
+          </h3>
+          <p>
+            We are inspired to welcome you to our <br />gallery and see how our
+            collections <br />influince you
+          </p>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="bottom">
+          <h4>MODERN <br />ART GALLERY</h4>
+          <p>
+            The modern art gallery is free to all visitors and open <br />
+            seven days a week from 8am to 9pm.Find us at 99 <br />King
+            Street,Newport,USA
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
